@@ -18,29 +18,29 @@ const config = {
   userEmail: "hyreadskenya@gmail.com", // Email used for RSS feed's author segment
   userTwitter: "www.twitter.com/hyreads", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Nairobi, Kenya", // User location to display in the author segment.
-  userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.
+  userAvatar: "../static/assets/hylogo4.png", // User avatar to display in the author segment.
   userDescription:
-    "This is placeholder content. lorem ipsum do re mi fa so la ti do, do ti la so fa mi re do", // User description to display in the author segment.
+    "This placeholder content is.official Blog for the Also  Hyreads platform.placeholder content. Also official Blog", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
 
   userLinks: [
     {
-      label: "Faebook",
+      label: "facebook",
       url: "https://facebook.com/Hyreads",
       iconClassName: "fa fa-facebook",
     },
     {
-      label: "Twitter",
+      label: "twitter",
       url: "https://twitter.com/hyreads",
       iconClassName: "fa fa-twitter",
     },
     {
-      label: "Email",
+      label: "email",
       url: "hyreadskenya@gmail.com",
       iconClassName: "fa fa-envelope",
     },
   ],
-  copyright: "Copyright © 2021. Hyblog", // Copyright string for the footer of the website and RSS feed.
+  copyright: "Copyright © 2021. Hyreads", // Copyright string for the footer of the website and RSS feed.
 }
 
 // Validate

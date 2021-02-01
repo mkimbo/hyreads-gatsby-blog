@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import Button from "react-md/lib/Buttons";
-import { Link } from "gatsby";
-import UserLinks from "../UserLinks";
-import config from "../../../data/SiteConfig";
-import "./Footer.scss";
+import React, { Component } from "react"
+import Button from "react-md/lib/Buttons"
+import { Link } from "gatsby"
+import UserLinks from "../UserLinks"
+import config from "../../../data/SiteConfig"
+import "./Footer.scss"
 
 class Footer extends Component {
   render() {
-    const url = config.siteRss;
-    const { userLinks } = this.props;
-    const { copyright, fixedFooter } = config;
+    const url = config.siteRss
+    const { userLinks } = this.props
+    const { copyright, fixedFooter } = config
     if (!copyright) {
-      return null;
+      return null
     }
     return (
       <footer className={fixedFooter ? "footer footer-fixed" : "footer"}>
@@ -24,23 +24,19 @@ class Footer extends Component {
           <div className="rss">
             <Link to={url}>
               <Button flat secondary iconClassName="fa fa-rss">
-                Subscribe to us
+                Subscribe
               </Button>
             </Link>
           </div>
           <div className="based-on">
             <h4>
-              Based on{" "}
-              <a href="https://github.com/Vagr9K/gatsby-material-starter">
-                Gatsby Material Starter
-              </a>
-              .
+              Sources from <a href="https://github.com/">Github</a>.
             </h4>
           </div>
         </div>
       </footer>
-    );
+    )
   }
 }
 
-export default Footer;
+export default Footer
