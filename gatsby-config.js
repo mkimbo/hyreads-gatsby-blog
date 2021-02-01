@@ -1,7 +1,7 @@
-const urljoin = require("url-join");
-const config = require("./data/SiteConfig");
+const urljoin = require("url-join")
+const config = require("./data/SiteConfig")
 
-const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/;
+const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/
 
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
@@ -15,9 +15,9 @@ module.exports = {
       image_url: `${urljoin(
         config.siteUrl,
         config.pathPrefix
-      )}/logos/logo-512.png`,
-      copyright: config.copyright
-    }
+      )}/logos/hylogo-512.png`,
+      copyright: config.copyright,
+    },
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -27,49 +27,50 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "assets",
-        path: `${__dirname}/static/assets/`
-      }
+        path: `${__dirname}/static/assets/`,
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content`
-      }
+        path: `${__dirname}/content`,
+      },
     },
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-relative-images"
+            resolve: "gatsby-remark-relative-images",
           },
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 672
-            }
+              maxWidth: 672,
+            },
           },
           {
-            resolve: "gatsby-remark-responsive-iframe"
+            resolve: "gatsby-remark-responsive-iframe",
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers"
-        ]
-      }
+          "gatsby-remark-autolink-headers",
+        ],
+      },
     },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: config.siteGATrackingID
-      }
+        trackingId: config.siteGATrackingID,
+      },
     },
     {
       resolve: "gatsby-plugin-nprogress",
       options: {
-        color: "#c62828"
-      }
+        color: "#228ce3",
+        showSpinner: true,
+      },
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
@@ -101,8 +102,8 @@ module.exports = {
                 }
               }
             }
-        }`
-      }
+        }`,
+      },
     },
     {
       resolve: "gatsby-plugin-manifest",
@@ -116,27 +117,27 @@ module.exports = {
         display: "minimal-ui",
         icons: [
           {
-            src: "/logos/logo-192.png",
+            src: "/logos/hylogo-192.png",
             sizes: "192x192",
-            type: "image/png"
+            type: "image/png",
           },
           {
-            src: "/logos/logo-512.png",
+            src: "/logos/hylogo-512.png",
             sizes: "512x512",
-            type: "image/png"
-          }
-        ]
-      }
+            type: "image/png",
+          },
+        ],
+      },
     },
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-feed",
       options: {
         setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS Material Starter";
-          return ret;
+          const ret = ref.query.site.siteMetadata.rssMetadata
+          ret.allMarkdownRemark = ref.query.allMarkdownRemark
+          ret.generator = "Hyreads Official Blog"
+          return ret
         },
         query: `
         {
@@ -157,7 +158,7 @@ module.exports = {
         feeds: [
           {
             serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata;
+              const { rssMetadata } = ctx.query.site.siteMetadata
               return ctx.query.allMarkdownRemark.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
@@ -167,9 +168,9 @@ module.exports = {
                 guid: rssMetadata.site_url + edge.node.fields.slug,
                 custom_elements: [
                   { "content:encoded": edge.node.html },
-                  { author: config.userEmail }
-                ]
-              }));
+                  { author: config.userEmail },
+                ],
+              }))
             },
             query: `
             {
@@ -196,10 +197,10 @@ module.exports = {
             }
           `,
             output: config.siteRss,
-            title: config.siteRssTitle
-          }
-        ]
-      }
-    }
-  ]
-};
+            title: config.siteRssTitle,
+          },
+        ],
+      },
+    },
+  ],
+}

@@ -3,7 +3,7 @@ const config = {
   siteTitleShort: "Hyblog", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Hyreads Blog", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-  siteUrl: "http://localhost:8000/", // Domain of your website without pathPrefix.
+  siteUrl: "https://hyblog.netlify.app/", // Domain of your website without pathPrefix.
   pathPrefix: "/hyblog", // Prefixes all links. For cases when deployed to example.github.io/gatsby-material-starter/.
   fixedFooter: false, // Whether the footer component is fixed, i.e. always visible
   siteDescription: "The Official Blog from Hyreads.", // Website description used for RSS feeds/meta description tag.

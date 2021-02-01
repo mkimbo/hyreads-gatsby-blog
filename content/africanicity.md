@@ -1,5 +1,5 @@
 ---
-title: "Africanicity, The African Spring"
+title: "Africanicity: The African Spring"
 cover: "6.jpg"
 category: "african affairs"
 date: "2020-12-25"
