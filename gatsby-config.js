@@ -136,7 +136,8 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = "Hyreads Official Blog"
+          ret.generator =
+            "Dont Worry, This is a Raw data page meant for RSS Readers"
           return ret
         },
         query: `
@@ -175,7 +176,7 @@ module.exports = {
             query: `
             {
               allMarkdownRemark(
-                limit: 1000,
+                limit: 2,
                 sort: { order: DESC, fields: [frontmatter___date] },
               ) {
                 edges {
