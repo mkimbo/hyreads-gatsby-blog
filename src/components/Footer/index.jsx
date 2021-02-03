@@ -18,19 +18,9 @@ class Footer extends Component {
         {userLinks ? <UserLinks config={config} labeled /> : null}
         <div className="notice-container">
           <div className="copyright">
-            <h4>{copyright}</h4>
-          </div>
-
-          <div className="rss">
-            <Link to={`/`}>
-              <Button flat secondary iconClassName="fa fa-rss">
-                Subscribe
-              </Button>
-            </Link>
-          </div>
-          <div className="based-on">
             <h4>
-              Sources from <a href="https://github.com/">Github</a>.
+              <a href="https://hyreads.com/">Hyreads</a> ©{" "}
+              {new Date().getFullYear()}
             </h4>
           </div>
         </div>

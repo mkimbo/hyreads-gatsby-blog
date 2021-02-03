@@ -1,18 +1,19 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { graphql } from "gatsby";
-import PostListing from "../components/PostListing";
-import Layout from "../layout";
-import config from "../../data/SiteConfig";
+import React from "react"
+import { Helmet } from "react-helmet"
+import { graphql } from "gatsby"
+import PostListing from "../components/PostListing"
+import Layout from "../layout"
+import config from "../../data/SiteConfig"
 
 export default class CategoryTemplate extends React.Component {
   render() {
-    const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const { category } = this.props.pageContext
+    const postEdges = this.props.data.allMarkdownRemark.edges
     return (
       <Layout
         location={this.props.location}
-        title={category.charAt(0).toUpperCase() + category.slice(1)}
+        title={`${category.charAt(0).toUpperCase() +
+          category.slice(1)} category`}
       >
         <div className="category-container">
           <Helmet>
@@ -27,7 +28,7 @@ export default class CategoryTemplate extends React.Component {
           <PostListing postEdges={postEdges} />
         </div>
       </Layout>
-    );
+    )
   }
 }
 
@@ -57,4 +58,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
